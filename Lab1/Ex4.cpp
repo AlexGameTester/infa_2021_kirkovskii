@@ -1,4 +1,4 @@
-#include <iostream>
+    #include <iostream>
 using namespace std;
 
 int main()
@@ -8,7 +8,9 @@ int main()
     cin >> n;
     string s = "";
     for(int i = 0; i < n; i++) {
-        s += "*";
+        for(int j = 0; j < i + 1; j++) {
+            cout << "*";
+        }
         cout << s << endl;
     }
     return 0;
