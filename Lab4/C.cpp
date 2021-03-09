@@ -1,5 +1,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
+using namespace std;
 
 struct Node
 {
@@ -32,6 +33,24 @@ struct Queue
         tail = new_node;
         ++size;
     }
+    int pop()
+    {
+        cout << "Size before " << size << endl;
+        int val = head->value;
+        cout << endl
+             << "Value " << val << endl;
+        Node *old_head = head;
+        head = head->next;
+        if (head != NULL)
+        {
+            head->prev = NULL;
+        }
+
+        delete old_head;
+        size--;
+
+        return val;
+    }
 
     int pop_last()
     {
@@ -46,29 +65,35 @@ struct Queue
         return last_val;
     }
 
-    void push_after(int index)
+    void push_after(int index, int value)
     {
+        Node *current = head;
         while (index > 0)
         {
+            current = current->next;
+            index--;
         }
+
+        Node *new_node = new Node;
+        new_node->value = value;
+        new_node->prev = current;
+        new_node->next = current->next;
+        current->next = new_node;
+        size++;
     }
-};
 
-struct List
-{
-    Node *head = NULL;
-    Node *tail = NULL;
-    unsigned int size = 0;
-
-    void print()
+    void push_after_center(int value)
     {
-        Node *p_node = head;
-        while (p_node != NULL)
+        int center;
+        if (size == 0)
         {
-            std::cout << p_node->value << ' ';
-            p_node = p_node->next;
+            center = 0;
         }
-        std::cout << '\n';
+        else
+        {
+            center = size % 2 == 0 ? size / 2 - 1 : size / 2;
+        }
+        push_after(center, value);
     }
 
     void clear()
@@ -81,49 +106,38 @@ struct List
         }
         size = 0;
     }
-
-    bool equals(List list2)
-    {
-        return false;
-    }
-
-    void push_back(int value)
-    {
-        if (head == NULL)
-        {
-            head = new Node;
-            head->value = value;
-            tail = head;
-            size = 1;
-            return;
-        }
-
-        Node *new_node = new Node;
-        tail->next = new_node;
-        new_node->prev = tail;
-        new_node->value = value;
-        tail = new_node;
-        ++size;
-    }
-
-    void push_left(int value)
-    {
-    }
-
-    int pop(int index)
-    {
-        return INT_MIN;
-    }
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
-    List list1;
-    for (int i = 1; i <= 10; ++i)
-        list1.push_back(i);
+    Queue *queue = new Queue;
+    int n;
+    cin >> n;
 
-    list1.print();
-    list1.clear();
-    list1.print();
-    return 0;
+    string input;
+    for (int j = 0; j < n; j++)
+    {
+        cin >> input;
+        if (input[0] == '-')
+        {
+            int i = queue->pop();
+            cout << i;
+        }
+        else if (input[0] == '+')
+        {
+            int i;
+            cin >> i;
+            queue->push_back(i);
+        }
+        else if (input[0] == '*')
+        {
+            int i;
+            cin >> i;
+            queue->push_after_center(i);
+        }
+    }
+
+    queue->clear();
+
+    delete queue;
 }
