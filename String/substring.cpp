@@ -56,7 +56,8 @@ struct string
     {
         size = s.size;
         capacity = s.capacity;
-        delete[] str;
+        if (str)
+            delete[] str;
         str = new char[capacity];
         for (int i = 0; i < size; i++)
         {
@@ -131,6 +132,7 @@ struct string
             {
                 return true;
             }
+            //TODO: If < return false
         }
         return size > other.size;
     }
@@ -154,7 +156,10 @@ struct string
         return *this;
     }
 
-    char operator[](unsigned int pos) {}
+    char operator[](unsigned int pos) const
+    {
+        return str[pos];
+    }
 
     void append(const string other)
     {
@@ -201,6 +206,7 @@ struct string
 
     void reserve(unsigned int capacity)
     {
+        //TODO: Здесь и в других местах проверять на возможность переполнения
         size_t additional_capacity = capacity - (this->capacity - this->size);
         if (additional_capacity > 0)
         {
@@ -212,7 +218,7 @@ struct string
 
     void shrink_to_fit()
     {
-        if (capacity - size > 0)
+        if (capacity > size)
         {
             char *new_str = new char[size];
             for (int i = 0; i < size; i++)
@@ -300,6 +306,12 @@ struct string
         cout << "Set string params. Read string" << endl;
 
         return istr;
+
+        char tmp;
+        while (!istr.eof() && (tmp = istr.get()) && (tmp != ' ') && (tmp))
+        {
+            str += tmp; // Нужно написать += для char
+        }
     }
 };
 
