@@ -2,191 +2,219 @@ free test; mode=0; length=100; min_time=0; mean_time=0
 vector push_back creation; mode=1; length=100; min_time=0; mean_time=0
 list push_back creation; mode=2; length=100; min_time=0; mean_time=0
 vector push_back creation with preallocation; mode=3; length=100; min_time=0; mean_time=0
-vector instert at beginning creation; mode=4; length=100; min_time=0; mean_time=125275
-list push_front creation; mode=5; length=100; min_time=0; mean_time=0
+vector insert at beginning adding; mode=4; length=100; min_time=0; mean_time=375350
+list push_front adding; mode=5; length=100; min_time=0; mean_time=125137.5
+vector push_back adding; mode=6; length=100; min_time=0; mean_time=0
+list push_back adding; mode=7; length=100; min_time=0; mean_time=125125
+vector center adding; mode=8; length=100; min_time=0; mean_time=250200
+list center adding; mode=9; length=100; min_time=3001700; mean_time=3628400
 free test; mode=0; length=1000; min_time=0; mean_time=0
-vector push_back creation; mode=1; length=1000; min_time=0; mean_time=67925
-list push_back creation; mode=2; length=1000; min_time=0; mean_time=125412.5
+vector push_back creation; mode=1; length=1000; min_time=0; mean_time=0
+list push_back creation; mode=2; length=1000; min_time=0; mean_time=125212.5
 vector push_back creation with preallocation; mode=3; length=1000; min_time=0; mean_time=0
-vector instert at beginning creation; mode=4; length=1000; min_time=0; mean_time=125125
-list push_front creation; mode=5; length=1000; min_time=0; mean_time=125212.5
+vector insert at beginning adding; mode=4; length=1000; min_time=0; mean_time=375562.5
+list push_front adding; mode=5; length=1000; min_time=0; mean_time=125200
+vector push_back adding; mode=6; length=1000; min_time=0; mean_time=125075
+list push_back adding; mode=7; length=1000; min_time=0; mean_time=0
+vector center adding; mode=8; length=1000; min_time=0; mean_time=500475
+list center adding; mode=9; length=1000; min_time=7005900; mean_time=7006412.5
 free test; mode=0; length=10000; min_time=0; mean_time=0
-vector push_back creation; mode=1; length=10000; min_time=0; mean_time=125112.5
-list push_back creation; mode=2; length=10000; min_time=999800; mean_time=1125950
-vector push_back creation with preallocation; mode=3; length=10000; min_time=0; mean_time=125075
-vector instert at beginning creation; mode=4; length=10000; min_time=5003000; mean_time=6255412.5
-list push_front creation; mode=5; length=10000; min_time=0; mean_time=750637.5
+vector push_back creation; mode=1; length=10000; min_time=0; mean_time=250262.5
+list push_back creation; mode=2; length=10000; min_time=0; mean_time=750700
+vector push_back creation with preallocation; mode=3; length=10000; min_time=0; mean_time=125125
+vector insert at beginning adding; mode=4; length=10000; min_time=2001500; mean_time=2377262.5
+list push_front adding; mode=5; length=10000; min_time=0; mean_time=250100
+vector push_back adding; mode=6; length=10000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=10000; min_time=0; mean_time=250400
+vector center adding; mode=8; length=10000; min_time=1000500; mean_time=1000900
+list center adding; mode=9; length=10000; min_time=36033000; mean_time=37534325
 free test; mode=0; length=20000; min_time=0; mean_time=0
-vector push_back creation; mode=1; length=20000; min_time=0; mean_time=250175
-list push_back creation; mode=2; length=20000; min_time=1000200; mean_time=1751575
-vector push_back creation with preallocation; mode=3; length=20000; min_time=0; mean_time=250112.5
-vector instert at beginning creation; mode=4; length=20000; min_time=22018900; mean_time=22270175
-list push_front creation; mode=5; length=20000; min_time=1000600; mean_time=1501325
+vector push_back creation; mode=1; length=20000; min_time=0; mean_time=375412.5
+list push_back creation; mode=2; length=20000; min_time=1000600; mean_time=1626625
+vector push_back creation with preallocation; mode=3; length=20000; min_time=0; mean_time=250262.5
+vector insert at beginning adding; mode=4; length=20000; min_time=4003600; mean_time=4754062.5
+list push_front adding; mode=5; length=20000; min_time=0; mean_time=0
+vector push_back adding; mode=6; length=20000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=20000; min_time=0; mean_time=125150
+vector center adding; mode=8; length=20000; min_time=2001300; mean_time=2127037.5
+list center adding; mode=9; length=20000; min_time=68062000; mean_time=69938700
 free test; mode=0; length=30000; min_time=0; mean_time=0
-vector push_back creation; mode=1; length=30000; min_time=0; mean_time=500462.5
-list push_back creation; mode=2; length=30000; min_time=3001900; mean_time=3377912.5
-vector push_back creation with preallocation; mode=3; length=30000; min_time=0; mean_time=375250
-vector instert at beginning creation; mode=4; length=30000; min_time=49044700; mean_time=49920962.5
-list push_front creation; mode=5; length=30000; min_time=2001500; mean_time=2878087.5
-free test; mode=0; length=40000; min_time=0; mean_time=125037.5
-vector push_back creation; mode=1; length=40000; min_time=0; mean_time=625475
-list push_back creation; mode=2; length=40000; min_time=3001600; mean_time=3127737.5
-vector push_back creation with preallocation; mode=3; length=40000; min_time=0; mean_time=500350
-vector instert at beginning creation; mode=4; length=40000; min_time=84452600; mean_time=87403425
-list push_front creation; mode=5; length=40000; min_time=3002300; mean_time=3253000
-free test; mode=0; length=50000; min_time=0; mean_time=125100
-vector push_back creation; mode=1; length=50000; min_time=0; mean_time=625575
-list push_back creation; mode=2; length=50000; min_time=4002900; mean_time=4378737.5
-vector push_back creation with preallocation; mode=3; length=50000; min_time=0; mean_time=500375
-vector instert at beginning creation; mode=4; length=50000; min_time=134113700; mean_time=135498412.5
-list push_front creation; mode=5; length=50000; min_time=3986200; mean_time=4251750
-free test; mode=0; length=60000; min_time=0; mean_time=125075
-vector push_back creation; mode=1; length=60000; min_time=0; mean_time=750662.5
-list push_back creation; mode=2; length=60000; min_time=5003700; mean_time=5004512.5
-vector push_back creation with preallocation; mode=3; length=60000; min_time=0; mean_time=625462.5
-vector instert at beginning creation; mode=4; length=60000; min_time=186169700; mean_time=189923100
-list push_front creation; mode=5; length=60000; min_time=5004000; mean_time=5004400
-free test; mode=0; length=70000; min_time=0; mean_time=125050
-vector push_back creation; mode=1; length=70000; min_time=1000600; mean_time=1001037.5
-list push_back creation; mode=2; length=70000; min_time=5002400; mean_time=5630037.5
-vector push_back creation with preallocation; mode=3; length=70000; min_time=0; mean_time=750612.5
-vector instert at beginning creation; mode=4; length=70000; min_time=259235000; mean_time=268182962.5
-list push_front creation; mode=5; length=70000; min_time=4508300; mean_time=5450562.5
-free test; mode=0; length=80000; min_time=0; mean_time=250287.5
-vector push_back creation; mode=1; length=80000; min_time=1000300; mean_time=1000800
-list push_back creation; mode=2; length=80000; min_time=5995200; mean_time=6504787.5
-vector push_back creation with preallocation; mode=3; length=80000; min_time=0; mean_time=875712.5
-vector instert at beginning creation; mode=4; length=80000; min_time=326823300; mean_time=333173062.5
-list push_front creation; mode=5; length=80000; min_time=6005200; mean_time=6380987.5
-free test; mode=0; length=90000; min_time=0; mean_time=125087.5
-vector push_back creation; mode=1; length=90000; min_time=1000800; mean_time=1251162.5
-list push_back creation; mode=2; length=90000; min_time=7005700; mean_time=7131987.5
-vector push_back creation with preallocation; mode=3; length=90000; min_time=1000200; mean_time=1376075
-vector instert at beginning creation; mode=4; length=90000; min_time=414377400; mean_time=419382337.5
-list push_front creation; mode=5; length=90000; min_time=7005500; mean_time=7131225
-free test; mode=0; length=100000; min_time=0; mean_time=250112.5
-vector push_back creation; mode=1; length=100000; min_time=1000200; mean_time=1376200
-list push_back creation; mode=2; length=100000; min_time=8006100; mean_time=8132400
-vector push_back creation with preallocation; mode=3; length=100000; min_time=1000700; mean_time=1376212.5
-vector instert at beginning creation; mode=4; length=100000; min_time=508744100; mean_time=518390400
-list push_front creation; mode=5; length=100000; min_time=7003600; mean_time=8131912.5
-free test; mode=0; length=110000; min_time=0; mean_time=249125
-vector push_back creation; mode=1; length=110000; min_time=1000500; mean_time=1501275
-list push_back creation; mode=2; length=110000; min_time=9007400; mean_time=9133037.5
-vector push_back creation with preallocation; mode=3; length=110000; min_time=1000900; mean_time=1626625
-vector instert at beginning creation; mode=4; length=110000; min_time=616562200; mean_time=626174512.5
-list push_front creation; mode=5; length=110000; min_time=8008000; mean_time=8884175
-free test; mode=0; length=120000; min_time=0; mean_time=250150
-vector push_back creation; mode=1; length=120000; min_time=1000900; mean_time=2001737.5
-list push_back creation; mode=2; length=120000; min_time=9008400; mean_time=10384325
-vector push_back creation with preallocation; mode=3; length=120000; min_time=1000400; mean_time=1376062.5
-vector instert at beginning creation; mode=4; length=120000; min_time=730666300; mean_time=744328662.5
-list push_front creation; mode=5; length=120000; min_time=9007400; mean_time=9883962.5
-free test; mode=0; length=130000; min_time=0; mean_time=500362.5
-vector push_back creation; mode=1; length=130000; min_time=1000300; mean_time=1751525
-list push_back creation; mode=2; length=130000; min_time=10008500; mean_time=10259225
-vector push_back creation with preallocation; mode=3; length=130000; min_time=1000200; mean_time=1251162.5
-vector instert at beginning creation; mode=4; length=130000; min_time=858826300; mean_time=869869712.5
-list push_front creation; mode=5; length=130000; min_time=10008700; mean_time=10634600
-free test; mode=0; length=140000; min_time=0; mean_time=375437.5
-vector push_back creation; mode=1; length=140000; min_time=1000900; mean_time=1751487.5
-list push_back creation; mode=2; length=140000; min_time=11008600; mean_time=11510337.5
-vector push_back creation with preallocation; mode=3; length=140000; min_time=999900; mean_time=1376187.5
-vector instert at beginning creation; mode=4; length=140000; min_time=996909600; mean_time=1015553275
-list push_front creation; mode=5; length=140000; min_time=11010200; mean_time=11263487.5
-free test; mode=0; length=150000; min_time=0; mean_time=375175
-vector push_back creation; mode=1; length=150000; min_time=1000300; mean_time=1903437.5
-list push_back creation; mode=2; length=150000; min_time=12003000; mean_time=12009787.5
-vector push_back creation with preallocation; mode=3; length=150000; min_time=999300; mean_time=1501312.5
-vector instert at beginning creation; mode=4; length=150000; min_time=1150835100; mean_time=1169505962.5
-list push_front creation; mode=5; length=150000; min_time=11009400; mean_time=14387925
-free test; mode=0; length=160000; min_time=0; mean_time=500387.5
-vector push_back creation; mode=1; length=160000; min_time=1000700; mean_time=1876612.5
-list push_back creation; mode=2; length=160000; min_time=13010600; mean_time=14388000
-vector push_back creation with preallocation; mode=3; length=160000; min_time=2001400; mean_time=2252312.5
-vector instert at beginning creation; mode=4; length=160000; min_time=1317832100; mean_time=1324096225
-list push_front creation; mode=5; length=160000; min_time=12011300; mean_time=15889987.5
-free test; mode=0; length=170000; min_time=0; mean_time=625600
-vector push_back creation; mode=1; length=170000; min_time=2001000; mean_time=2001725
-list push_back creation; mode=2; length=170000; min_time=13012200; mean_time=14012812.5
-vector push_back creation with preallocation; mode=3; length=170000; min_time=1000300; mean_time=1751575
-vector instert at beginning creation; mode=4; length=170000; min_time=1482112300; mean_time=1497783312.5
-list push_front creation; mode=5; length=170000; min_time=13011600; mean_time=14513037.5
-free test; mode=0; length=180000; min_time=0; mean_time=375150
-vector push_back creation; mode=1; length=180000; min_time=1002600; mean_time=2126937.5
-list push_back creation; mode=2; length=180000; min_time=14012400; mean_time=16389825
-vector push_back creation with preallocation; mode=3; length=180000; min_time=1000500; mean_time=2126787.5
-vector instert at beginning creation; mode=4; length=180000; min_time=1664527000; mean_time=1681661712.5
-list push_front creation; mode=5; length=180000; min_time=14011800; mean_time=14763500
-free test; mode=0; length=190000; min_time=0; mean_time=500512.5
-vector push_back creation; mode=1; length=190000; min_time=2000300; mean_time=2126837.5
-list push_back creation; mode=2; length=190000; min_time=15002000; mean_time=17015462.5
-vector push_back creation with preallocation; mode=3; length=190000; min_time=1000700; mean_time=2001700
-vector instert at beginning creation; mode=4; length=190000; min_time=1850372400; mean_time=1876462662.5
-list push_front creation; mode=5; length=190000; min_time=15013100; mean_time=15638975
-free test; mode=0; length=200000; min_time=0; mean_time=500437.5
-vector push_back creation; mode=1; length=200000; min_time=2001600; mean_time=2377225
-list push_back creation; mode=2; length=200000; min_time=16013700; mean_time=16264512.5
-vector push_back creation with preallocation; mode=3; length=200000; min_time=2001700; mean_time=2126800
-vector instert at beginning creation; mode=4; length=200000; min_time=2062881800; mean_time=2076614275
-list push_front creation; mode=5; length=200000; min_time=16013700; mean_time=17141725
-free test; mode=0; length=210000; min_time=0; mean_time=500312.5
-vector push_back creation; mode=1; length=210000; min_time=2002100; mean_time=3127887.5
-list push_back creation; mode=2; length=210000; min_time=16014500; mean_time=17516100
-vector push_back creation with preallocation; mode=3; length=210000; min_time=2000800; mean_time=2126837.5
-vector instert at beginning creation; mode=4; length=210000; min_time=2279046700; mean_time=2288976562.5
-list push_front creation; mode=5; length=210000; min_time=17005200; mean_time=17638012.5
-free test; mode=0; length=220000; min_time=0; mean_time=625512.5
-vector push_back creation; mode=1; length=220000; min_time=2001200; mean_time=2377062.5
-list push_back creation; mode=2; length=220000; min_time=17015200; mean_time=17641200
-vector push_back creation with preallocation; mode=3; length=220000; min_time=2001500; mean_time=2376975
-vector instert at beginning creation; mode=4; length=220000; min_time=2490689900; mean_time=2511544537.5
-list push_front creation; mode=5; length=220000; min_time=15013400; mean_time=17640887.5
-free test; mode=0; length=230000; min_time=0; mean_time=625437.5
-vector push_back creation; mode=1; length=230000; min_time=2001800; mean_time=2627387.5
-list push_back creation; mode=2; length=230000; min_time=17015800; mean_time=18642062.5
-vector push_back creation with preallocation; mode=3; length=230000; min_time=2001300; mean_time=2377087.5
-vector instert at beginning creation; mode=4; length=230000; min_time=2707669700; mean_time=2738745937.5
-list push_front creation; mode=5; length=230000; min_time=15996800; mean_time=18000487.5
-free test; mode=0; length=240000; min_time=0; mean_time=751925
-vector push_back creation; mode=1; length=240000; min_time=2001800; mean_time=3057125
-list push_back creation; mode=2; length=240000; min_time=17015600; mean_time=18393050
-vector push_back creation with preallocation; mode=3; length=240000; min_time=2000900; mean_time=2377162.5
-vector instert at beginning creation; mode=4; length=240000; min_time=2964608100; mean_time=2985208262.5
-list push_front creation; mode=5; length=240000; min_time=17015600; mean_time=18268212.5
-free test; mode=0; length=250000; min_time=0; mean_time=500400
-vector push_back creation; mode=1; length=250000; min_time=2002000; mean_time=3377862.5
-list push_back creation; mode=2; length=250000; min_time=19017700; mean_time=20018050
-vector push_back creation with preallocation; mode=3; length=250000; min_time=2001600; mean_time=2502150
-vector instert at beginning creation; mode=4; length=250000; min_time=3220139000; mean_time=3249273325
-list push_front creation; mode=5; length=250000; min_time=18016000; mean_time=19766462.5
-free test; mode=0; length=260000; min_time=0; mean_time=875612.5
-vector push_back creation; mode=1; length=260000; min_time=2001600; mean_time=2877500
-list push_back creation; mode=2; length=260000; min_time=19017300; mean_time=22019825
-vector push_back creation with preallocation; mode=3; length=260000; min_time=2001800; mean_time=3127462.5
-vector instert at beginning creation; mode=4; length=260000; min_time=3477575600; mean_time=3500207500
-list push_front creation; mode=5; length=260000; min_time=19017400; mean_time=20146225
-free test; mode=0; length=270000; min_time=0; mean_time=877137.5
-vector push_back creation; mode=1; length=270000; min_time=3002600; mean_time=3503150
-list push_back creation; mode=2; length=270000; min_time=19018300; mean_time=22395250
-vector push_back creation with preallocation; mode=3; length=270000; min_time=2001900; mean_time=3127862.5
-vector instert at beginning creation; mode=4; length=270000; min_time=3734949800; mean_time=3766020250
-list push_front creation; mode=5; length=270000; min_time=19017700; mean_time=20517137.5
-free test; mode=0; length=280000; min_time=0; mean_time=625487.5
-vector push_back creation; mode=1; length=280000; min_time=3002400; mean_time=3252925
-list push_back creation; mode=2; length=280000; min_time=19989900; mean_time=21408475
-vector push_back creation with preallocation; mode=3; length=280000; min_time=2001400; mean_time=2877862.5
-vector instert at beginning creation; mode=4; length=280000; min_time=4032883500; mean_time=4054836237.5
-list push_front creation; mode=5; length=280000; min_time=20020500; mean_time=21207287.5
-free test; mode=0; length=290000; min_time=0; mean_time=873412.5
-vector push_back creation; mode=1; length=290000; min_time=3002700; mean_time=3251925
-list push_back creation; mode=2; length=290000; min_time=21018300; mean_time=21523900
-vector push_back creation with preallocation; mode=3; length=290000; min_time=3002400; mean_time=3127750
-vector instert at beginning creation; mode=4; length=290000; min_time=4314944800; mean_time=4341415112.5
-list push_front creation; mode=5; length=290000; min_time=20018300; mean_time=21147012.5
-free test; mode=0; length=300000; min_time=0; mean_time=626862.5
-vector push_back creation; mode=1; length=300000; min_time=3001700; mean_time=3878512.5
-list push_back creation; mode=2; length=300000; min_time=22019300; mean_time=23148525
-vector push_back creation with preallocation; mode=3; length=300000; min_time=2992300; mean_time=3002762.5
-vector instert at beginning creation; mode=4; length=300000; min_time=4632063800; mean_time=4666466387.5
-list push_front creation; mode=5; length=300000; min_time=20963100; mean_time=22426387.5
+vector push_back creation; mode=1; length=30000; min_time=0; mean_time=625475
+list push_back creation; mode=2; length=30000; min_time=2001600; mean_time=2377312.5
+vector push_back creation with preallocation; mode=3; length=30000; min_time=0; mean_time=375287.5
+vector insert at beginning adding; mode=4; length=30000; min_time=5004800; mean_time=5880362.5
+list push_front adding; mode=5; length=30000; min_time=0; mean_time=250250
+vector push_back adding; mode=6; length=30000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=30000; min_time=0; mean_time=125137.5
+vector center adding; mode=8; length=30000; min_time=3001900; mean_time=3002675
+list center adding; mode=9; length=30000; min_time=108099300; mean_time=110725825
+free test; mode=0; length=40000; min_time=0; mean_time=125150
+vector push_back creation; mode=1; length=40000; min_time=0; mean_time=625612.5
+list push_back creation; mode=2; length=40000; min_time=3002400; mean_time=3503075
+vector push_back creation with preallocation; mode=3; length=40000; min_time=0; mean_time=500412.5
+vector insert at beginning adding; mode=4; length=40000; min_time=7006200; mean_time=7757112.5
+list push_front adding; mode=5; length=40000; min_time=0; mean_time=125150
+vector push_back adding; mode=6; length=40000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=40000; min_time=0; mean_time=125287.5
+vector center adding; mode=8; length=40000; min_time=4003200; mean_time=4128712.5
+list center adding; mode=9; length=40000; min_time=152138800; mean_time=157643850
+free test; mode=0; length=50000; min_time=0; mean_time=125175
+vector push_back creation; mode=1; length=50000; min_time=0; mean_time=625550
+list push_back creation; mode=2; length=50000; min_time=4002800; mean_time=4253912.5
+vector push_back creation with preallocation; mode=3; length=50000; min_time=0; mean_time=500400
+vector insert at beginning adding; mode=4; length=50000; min_time=9007300; mean_time=9633500
+list push_front adding; mode=5; length=50000; min_time=0; mean_time=250337.5
+vector push_back adding; mode=6; length=50000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=50000; min_time=0; mean_time=250175
+vector center adding; mode=8; length=50000; min_time=5004300; mean_time=5129800
+list center adding; mode=9; length=50000; min_time=188171600; mean_time=192802350
+free test; mode=0; length=60000; min_time=0; mean_time=250200
+vector push_back creation; mode=1; length=60000; min_time=0; mean_time=750712.5
+list push_back creation; mode=2; length=60000; min_time=4003500; mean_time=4754150
+vector push_back creation with preallocation; mode=3; length=60000; min_time=0; mean_time=626700
+vector insert at beginning adding; mode=4; length=60000; min_time=11009500; mean_time=11509150
+list push_front adding; mode=5; length=60000; min_time=0; mean_time=500512.5
+vector push_back adding; mode=6; length=60000; min_time=0; mean_time=125187.5
+list push_back adding; mode=7; length=60000; min_time=0; mean_time=125112.5
+vector center adding; mode=8; length=60000; min_time=5005500; mean_time=6130650
+list center adding; mode=9; length=60000; min_time=226217800; mean_time=233714275
+free test; mode=0; length=70000; min_time=0; mean_time=124912.5
+vector push_back creation; mode=1; length=70000; min_time=999800; mean_time=1251187.5
+list push_back creation; mode=2; length=70000; min_time=5002400; mean_time=5879662.5
+vector push_back creation with preallocation; mode=3; length=70000; min_time=0; mean_time=750525
+vector insert at beginning adding; mode=4; length=70000; min_time=13011600; mean_time=13385750
+list push_front adding; mode=5; length=70000; min_time=0; mean_time=125050
+vector push_back adding; mode=6; length=70000; min_time=0; mean_time=125025
+list push_back adding; mode=7; length=70000; min_time=0; mean_time=250250
+vector center adding; mode=8; length=70000; min_time=6005300; mean_time=6755137.5
+list center adding; mode=9; length=70000; min_time=264238400; mean_time=269872750
+free test; mode=0; length=80000; min_time=0; mean_time=125200
+vector push_back creation; mode=1; length=80000; min_time=1000600; mean_time=1251262.5
+list push_back creation; mode=2; length=80000; min_time=6004200; mean_time=6505837.5
+vector push_back creation with preallocation; mode=3; length=80000; min_time=0; mean_time=750562.5
+vector insert at beginning adding; mode=4; length=80000; min_time=15013500; mean_time=15138887.5
+list push_front adding; mode=5; length=80000; min_time=0; mean_time=0
+vector push_back adding; mode=6; length=80000; min_time=0; mean_time=125087.5
+list push_back adding; mode=7; length=80000; min_time=0; mean_time=125087.5
+vector center adding; mode=8; length=80000; min_time=7006100; mean_time=7506862.5
+list center adding; mode=9; length=80000; min_time=297269300; mean_time=305403400
+free test; mode=0; length=90000; min_time=0; mean_time=376800
+vector push_back creation; mode=1; length=90000; min_time=999900; mean_time=1126062.5
+list push_back creation; mode=2; length=90000; min_time=7004500; mean_time=7006462.5
+vector push_back creation with preallocation; mode=3; length=90000; min_time=0; mean_time=875837.5
+vector insert at beginning adding; mode=4; length=90000; min_time=17015100; mean_time=17015575
+list push_front adding; mode=5; length=90000; min_time=0; mean_time=125062.5
+vector push_back adding; mode=6; length=90000; min_time=0; mean_time=125250
+list push_back adding; mode=7; length=90000; min_time=0; mean_time=125100
+vector center adding; mode=8; length=90000; min_time=8006400; mean_time=8507850
+list center adding; mode=9; length=90000; min_time=338297600; mean_time=349816962.5
+free test; mode=0; length=100000; min_time=0; mean_time=375337.5
+vector push_back creation; mode=1; length=100000; min_time=999900; mean_time=1376200
+list push_back creation; mode=2; length=100000; min_time=8006500; mean_time=8132375
+vector push_back creation with preallocation; mode=3; length=100000; min_time=1000700; mean_time=1501500
+vector insert at beginning adding; mode=4; length=100000; min_time=18016200; mean_time=19644200
+list push_front adding; mode=5; length=100000; min_time=0; mean_time=376775
+vector push_back adding; mode=6; length=100000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=100000; min_time=0; mean_time=124987.5
+vector center adding; mode=8; length=100000; min_time=9007600; mean_time=10010562.5
+list center adding; mode=9; length=100000; min_time=380335200; mean_time=387600575
+free test; mode=0; length=110000; min_time=0; mean_time=250312.5
+vector push_back creation; mode=1; length=110000; min_time=1000300; mean_time=1626750
+list push_back creation; mode=2; length=110000; min_time=8007400; mean_time=8883312.5
+vector push_back creation with preallocation; mode=3; length=110000; min_time=1000100; mean_time=1626600
+vector insert at beginning adding; mode=4; length=110000; min_time=20017300; mean_time=21645900
+list push_front adding; mode=5; length=110000; min_time=0; mean_time=124800
+vector push_back adding; mode=6; length=110000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=110000; min_time=0; mean_time=125112.5
+vector center adding; mode=8; length=110000; min_time=10008500; mean_time=10135600
+list center adding; mode=9; length=110000; min_time=411374900; mean_time=419381012.5
+free test; mode=0; length=120000; min_time=0; mean_time=250100
+vector push_back creation; mode=1; length=120000; min_time=2001300; mean_time=2127050
+list push_back creation; mode=2; length=120000; min_time=8006900; mean_time=9633950
+vector push_back creation with preallocation; mode=3; length=120000; min_time=1000600; mean_time=1501212.5
+vector insert at beginning adding; mode=4; length=120000; min_time=22019900; mean_time=22395850
+list push_front adding; mode=5; length=120000; min_time=0; mean_time=125125
+vector push_back adding; mode=6; length=120000; min_time=0; mean_time=125075
+list push_back adding; mode=7; length=120000; min_time=0; mean_time=126237.5
+vector center adding; mode=8; length=120000; min_time=11009300; mean_time=11886937.5
+list center adding; mode=9; length=120000; min_time=448391400; mean_time=457666875
+free test; mode=0; length=130000; min_time=0; mean_time=251537.5
+vector push_back creation; mode=1; length=130000; min_time=999600; mean_time=1377750
+list push_back creation; mode=2; length=130000; min_time=9008800; mean_time=10010712.5
+vector push_back creation with preallocation; mode=3; length=130000; min_time=1000900; mean_time=1252550
+vector insert at beginning adding; mode=4; length=130000; min_time=24011400; mean_time=24649175
+list push_front adding; mode=5; length=130000; min_time=0; mean_time=125150
+vector push_back adding; mode=6; length=130000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=130000; min_time=0; mean_time=0
+vector center adding; mode=8; length=130000; min_time=11999500; mean_time=12259587.5
+list center adding; mode=9; length=130000; min_time=480438100; mean_time=494826475
+free test; mode=0; length=140000; min_time=0; mean_time=375525
+vector push_back creation; mode=1; length=140000; min_time=2000800; mean_time=2252000
+list push_back creation; mode=2; length=140000; min_time=10008600; mean_time=10885012.5
+vector push_back creation with preallocation; mode=3; length=140000; min_time=1000300; mean_time=1876737.5
+vector insert at beginning adding; mode=4; length=140000; min_time=26023200; mean_time=27399400
+list push_front adding; mode=5; length=140000; min_time=0; mean_time=250150
+vector push_back adding; mode=6; length=140000; min_time=0; mean_time=125075
+list push_back adding; mode=7; length=140000; min_time=0; mean_time=125137.5
+vector center adding; mode=8; length=140000; min_time=13011800; mean_time=13887600
+list center adding; mode=9; length=140000; min_time=521463600; mean_time=535612512.5
+free test; mode=0; length=150000; min_time=0; mean_time=375350
+vector push_back creation; mode=1; length=150000; min_time=1000800; mean_time=1751625
+list push_back creation; mode=2; length=150000; min_time=10008800; mean_time=11635825
+vector push_back creation with preallocation; mode=3; length=150000; min_time=1000400; mean_time=1876687.5
+vector insert at beginning adding; mode=4; length=150000; min_time=28025500; mean_time=28527512.5
+list push_front adding; mode=5; length=150000; min_time=0; mean_time=125100
+vector push_back adding; mode=6; length=150000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=150000; min_time=0; mean_time=125075
+vector center adding; mode=8; length=150000; min_time=14012000; mean_time=14512475
+list center adding; mode=9; length=150000; min_time=572532800; mean_time=585035000
+free test; mode=0; length=160000; min_time=0; mean_time=500575
+vector push_back creation; mode=1; length=160000; min_time=2001900; mean_time=2627575
+list push_back creation; mode=2; length=160000; min_time=11010800; mean_time=12762375
+vector push_back creation with preallocation; mode=3; length=160000; min_time=1000500; mean_time=1626587.5
+vector insert at beginning adding; mode=4; length=160000; min_time=30026600; mean_time=31281162.5
+list push_front adding; mode=5; length=160000; min_time=0; mean_time=375337.5
+vector push_back adding; mode=6; length=160000; min_time=0; mean_time=376712.5
+list push_back adding; mode=7; length=160000; min_time=0; mean_time=250137.5
+vector center adding; mode=8; length=160000; min_time=14012800; mean_time=15137912.5
+list center adding; mode=9; length=160000; min_time=596543400; mean_time=611933262.5
+free test; mode=0; length=170000; min_time=0; mean_time=375312.5
+vector push_back creation; mode=1; length=170000; min_time=2001400; mean_time=2126912.5
+list push_back creation; mode=2; length=170000; min_time=12010200; mean_time=12761675
+vector push_back creation with preallocation; mode=3; length=170000; min_time=1000500; mean_time=2252000
+vector insert at beginning adding; mode=4; length=170000; min_time=32029000; mean_time=33659725
+list push_front adding; mode=5; length=170000; min_time=0; mean_time=0
+vector push_back adding; mode=6; length=170000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=170000; min_time=0; mean_time=375325
+vector center adding; mode=8; length=170000; min_time=15013600; mean_time=15763300
+list center adding; mode=9; length=170000; min_time=636580500; mean_time=652845000
+free test; mode=0; length=180000; min_time=0; mean_time=500475
+vector push_back creation; mode=1; length=180000; min_time=2000500; mean_time=2377387.5
+list push_back creation; mode=2; length=180000; min_time=13010900; mean_time=13761862.5
+vector push_back creation with preallocation; mode=3; length=180000; min_time=1000900; mean_time=1751600
+vector insert at beginning adding; mode=4; length=180000; min_time=33029600; mean_time=34032287.5
+list push_front adding; mode=5; length=180000; min_time=0; mean_time=125112.5
+vector push_back adding; mode=6; length=180000; min_time=0; mean_time=123712.5
+list push_back adding; mode=7; length=180000; min_time=0; mean_time=0
+vector center adding; mode=8; length=180000; min_time=16002700; mean_time=16511762.5
+list center adding; mode=9; length=180000; min_time=671603200; mean_time=693005425
+free test; mode=0; length=190000; min_time=0; mean_time=373862.5
+vector push_back creation; mode=1; length=190000; min_time=2000900; mean_time=2377100
+list push_back creation; mode=2; length=190000; min_time=13011900; mean_time=14138000
+vector push_back creation with preallocation; mode=3; length=190000; min_time=2000800; mean_time=2126925
+vector insert at beginning adding; mode=4; length=190000; min_time=35031300; mean_time=35282162.5
+list push_front adding; mode=5; length=190000; min_time=0; mean_time=0
+vector push_back adding; mode=6; length=190000; min_time=0; mean_time=375425
+list push_back adding; mode=7; length=190000; min_time=0; mean_time=125162.5
+vector center adding; mode=8; length=190000; min_time=18015800; mean_time=18266750
+list center adding; mode=9; length=190000; min_time=708646200; mean_time=733293825
+free test; mode=0; length=200000; min_time=0; mean_time=500650
+vector push_back creation; mode=1; length=200000; min_time=1999600; mean_time=2001737.5
+list push_back creation; mode=2; length=200000; min_time=14002000; mean_time=15514300
+vector push_back creation with preallocation; mode=3; length=200000; min_time=1001000; mean_time=2502387.5
+vector insert at beginning adding; mode=4; length=200000; min_time=37032500; mean_time=37410450
+list push_front adding; mode=5; length=200000; min_time=0; mean_time=125137.5
+vector push_back adding; mode=6; length=200000; min_time=0; mean_time=0
+list push_back adding; mode=7; length=200000; min_time=0; mean_time=125125
+vector center adding; mode=8; length=200000; min_time=18016400; mean_time=19142600
+list center adding; mode=9; length=200000; min_time=774717900; mean_time=793973587.5
