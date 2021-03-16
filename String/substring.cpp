@@ -67,6 +67,8 @@ struct string
     ~string()
     {
         delete[] str;
+        size = 0;
+        capacity = 0;
     } //очистить всю используемую память
 
     string &operator=(const string &new_str)
@@ -182,6 +184,18 @@ struct string
             str = new_str;
             capacity = new_capacity;
         }
+        else if (new_capacity < size)
+        {
+            capacity = new_capacity;
+            size = new_capacity;
+            char *new_str = new char[new_capacity];
+            for (int i = 0; i < new_capacity; i++)
+            {
+                new_str[i] = str[i];
+            }
+            delete[] str;
+            str = new_str;
+        }
     } // увеличить/уменьшить емкость строки
 
     void reserve(unsigned int capacity)
@@ -195,9 +209,29 @@ struct string
 
     void insert(unsigned int pos, string other); // Вставка другой строки внутрь данной
 
-    void shrink_to_fit(); //очистить неиспользуемую память
+    void shrink_to_fit()
+    {
+        if (size - capacity > 0)
+        {
+            char *new_str = new char[size];
+            for (int i = 0; i < size; i++)
+            {
+                new_str[i] = str[i];
+            }
+            delete[] str;
+            str = new_str;
+            capacity = size;
+        }
+    } //очистить неиспользуемую память
 
-    void clear(); //очистить содержимое строки, занимаемое место при этом не меняется
+    void clear()
+    {
+        for (size_t i = 0; i < size; i++)
+        {
+            str[i] = 0;
+        }
+        size = 0;
+    } //очистить содержимое строки, занимаемое место при этом не меняется
 
     friend std::ostream &operator<<(std::ostream &ostr, const string &str)
     {
@@ -217,22 +251,52 @@ struct string
     }
     friend std::istream &operator>>(std::istream &istr, string &str)
     {
+        // char *cstr;
+        // istr >> cstr;
+        // size_t c_size = 0;
+        // while (cstr[c_size] != '\0')
+        // {
+        //     c_size++;
+        // }
+        // str.size = c_size;
+        // str.capacity = str.calc_capacity(c_size);
+
+        // str.str = new char[str.capacity];
+        // for (int i = 0; i < c_size; i++)
+        // {
+        //     str.str[i] = cstr[i];
+        // }
+        // string new_str(cstr);
+
         char *cstr;
         istr >> cstr;
-        size_t c_size = 0;
-        while (cstr[c_size] != '\0')
+        cout << "Got cstr: " << cstr << endl;
+        size_t size_ = 0;
+        while (cstr[size_] != '\0')
         {
-            c_size++;
+            size_++;
         }
-        str.size = c_size;
-        str.capacity = str.calc_capacity(c_size);
 
-        str.str = new char[str.capacity];
-        for (int i = 0; i < c_size; i++)
+        cout << "Got char * string" << endl;
+        str.clear();
+        cout << "Cleared string" << endl;
+
+        size_t capacity_ = str.calc_capacity(size_);
+        char *new_str = new char[capacity_];
+        cout << "Created new array" << endl;
+        for (size_t i = 0; i < size_; i++)
         {
-            str.str[i] = cstr[i];
+            new_str[i] = cstr[i];
         }
-        string new_str(cstr);
+
+        cout << "Filled new array" << endl;
+        delete[] cstr;
+        cout << "Deleted old array" << endl;
+
+        str.str = new_str;
+        str.size = size_;
+        str.capacity = capacity_;
+        cout << "Set string params. Read string" << endl;
 
         return istr;
     }
@@ -280,6 +344,14 @@ int main()
     // cout << "S8 before: " << s8 << endl;
     // cout << "S8 before: " << s8 << endl;
     cout << s7 << " > " << s8 << "?  " << (s7 > s8) << endl;
+    cout << s7 << " > " << s8 << "?  " << (s7 > s8) << endl;
+    s7.resize(2);
+    cout << s7 << " > " << s8 << "?  " << (s7 > s8) << endl;
+    s8.resize(2);
+    cout << s7 << " > " << s8 << "?  " << (s7 > s8) << endl;
+    s8.append("Qwv");
+    cout << s7 << " > " << s8 << "?  " << (s7 > s8) << endl;
+    s7.append("Qww");
     cout << s7 << " > " << s8 << "?  " << (s7 > s8) << endl;
     string s9 = s8;
     cout << "S8: " << s8 << endl;
