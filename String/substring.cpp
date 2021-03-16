@@ -339,10 +339,6 @@ int main()
 
     string s7("Aaaaaa");
     string s8("Aaaaab");
-    // cout << "S8 before: " << s8 << endl;
-    // cout << "S8 before: " << s8 << endl;
-    // cout << "S8 before: " << s8 << endl;
-    // cout << "S8 before: " << s8 << endl;
     cout << s7 << " > " << s8 << "?  " << (s7 > s8) << endl;
     cout << s7 << " > " << s8 << "?  " << (s7 > s8) << endl;
     s7.resize(2);
@@ -357,6 +353,10 @@ int main()
     cout << "S8: " << s8 << endl;
     cout << "S9: " << s9 << endl;
     cout << "s9 == s8: " << s9 << " == " << s8 << ": " << (s9 == s8) << endl;
+
+    string s10 = "SAjfos";
+    s10 += " SOme string";
+    cout << "S10: " << s10 << endl;
 
     string s5;
     cout << "Enter string: ";
