@@ -211,7 +211,7 @@ struct string
 
     void shrink_to_fit()
     {
-        if (size - capacity > 0)
+        if (capacity - size > 0)
         {
             char *new_str = new char[size];
             for (int i = 0; i < size; i++)
@@ -357,6 +357,9 @@ int main()
     string s10 = "SAjfos";
     s10 += " SOme string";
     cout << "S10: " << s10 << endl;
+    cout << "S10 capacity:" << s10.capacity << endl;
+    s10.shrink_to_fit();
+    cout << "S10 shrinked capacity:" << s10.capacity << endl;
 
     string s5;
     cout << "Enter string: ";
