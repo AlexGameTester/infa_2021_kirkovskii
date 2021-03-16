@@ -66,7 +66,8 @@ struct string
 
     ~string()
     {
-        delete[] str;
+        if (str)
+            delete[] str;
         size = 0;
         capacity = 0;
     } //очистить всю используемую память
