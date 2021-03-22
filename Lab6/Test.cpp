@@ -40,7 +40,10 @@ int main()
                                              "vector push_back adding",
                                              "list push_back adding",
                                              "vector center adding",
-                                             "list center adding"};
+                                             "list center adding",
+                                             "random numbers generation",
+                                             "vector random elements access",
+                                             "list random elements access"};
 
     std::ofstream file;
     file << std::setprecision(11);
@@ -50,7 +53,7 @@ int main()
     {
         unsigned int length = length_values[val_num];
 
-        for (int mode = 0; mode <= 9; mode++)
+        for (int mode = 0; mode <= 12; mode++)
         {
             Measurment m = do_measurement(mode, length, repetitions_per_value);
             cout << "Mean time for " << mode_descriptions[mode] << " for n=" << length << " is <t>=" << m.mean_time << endl;
@@ -82,6 +85,9 @@ Mode 6: добавление testing_vals_number элементов в коне�
 Mode 7: добавление testing_vals_number элементов в конец list из length элементов
 Mode 8: добавление testing_vals_number элементов в середину vector из length элементов
 Mode 9: добавление testing_vals_number элементов в середину list из length элементов
+Mode 10: обращение к testing_vals_number случайных элементов 
+Mode 11: чтение testing_vals_number случайных элементов из vector с length элементов
+Mode 12: чтение testing_vals_number случайных элементов из list с length элементов
 */
 Measurment do_measurement(int mode, int length, int repetitions)
 {
@@ -187,6 +193,32 @@ Measurment do_measurement(int mode, int length, int repetitions)
 
                 list.insert(center, val);
             }
+            break;
+        case 10:
+            for (int i = 0; i < testing_vals_number; i++)
+            {
+                int r = rand() % length;
+            }
+            break;
+        case 11:
+            for (int i = 0; i < testing_vals_number; i++)
+            {
+                int r = rand() % length;
+                int re = vect[r];
+            }
+            break;
+        case 12:
+            for (int i = 0; i < testing_vals_number; i++)
+            {
+                int r = rand() % length;
+                auto it = list.begin();
+                for (int j = 0; j < r; j++)
+                {
+                    it++;
+                }
+                int re = *it;
+            }
+
             break;
         }
         auto end = std::chrono::high_resolution_clock::now();
