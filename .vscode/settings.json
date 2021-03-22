@@ -1,6 +1,10 @@
 {
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     },
     "python.pythonPath": "C:\\Python38\\python.exe"
 }

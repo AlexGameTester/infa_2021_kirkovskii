@@ -17,7 +17,7 @@ struct string
             cap *= 2;
         }
 
-        return cap;
+        return cap + 1; // additional slot for '\0' symbol
     }
 
     string()
@@ -33,6 +33,8 @@ struct string
         {
             str[i] = c;
         }
+
+        str[size] = '\0';
     }
 
     string(char *cstr)
@@ -45,11 +47,15 @@ struct string
         size = c_size;
         capacity = calc_capacity(c_size);
 
+        if (str)
+            delete[] str;
         str = new char[capacity];
         for (int i = 0; i < c_size; i++)
         {
             str[i] = cstr[i];
         }
+
+        str[size] = '\0';
     }
 
     string(const string &s)
@@ -63,6 +69,8 @@ struct string
         {
             str[i] = s.str[i];
         }
+
+        str[size] = '\0';
     }
 
     ~string()
@@ -77,7 +85,8 @@ struct string
     {
         size = new_str.size;
         capacity = new_str.capacity;
-        delete[] str;
+        if (str)
+            delete[] str;
         str = new char[capacity];
         for (int i = 0; i < size; i++)
         {
@@ -106,21 +115,8 @@ struct string
     }
 
     bool operator!=(const string &other)
-    { // так будет немного быстрее работать, чем если просто !(this == other) использовать
-        if (size != other.size)
-        {
-            return true;
-        }
-
-        for (int i = 0; i < size; i++)
-        {
-            if (str[i] != other.str[i])
-            {
-                return true;
-            }
-        }
-
-        return false;
+    {
+        return !(*this == other);
     }
 
     bool operator>(const string &other) // Большей считается строка, стоящая ниже в алфавитном списке, или более длинная, если символы совпадают
@@ -132,6 +128,10 @@ struct string
             {
                 return true;
             }
+            else if (str[i] < other.str[i])
+            {
+                return false;
+            }
             //TODO: If < return false
         }
         return size > other.size;
@@ -139,21 +139,20 @@ struct string
 
     bool operator<(const string &other)
     {
-        size_t minSize = size > other.size ? other.size : size;
-        for (int i = 0; i < minSize; i++)
-        {
-            if (str[i] < other.str[i])
-            {
-                return true;
-            }
-        }
-        return size < other.size;
+        return !(*this > other) and *this != other;
     }
 
     string &operator+=(const string &other)
     {
         append(other);
         return *this;
+    }
+    string &operator+=(const char c)
+    {
+        reserve(1);
+        str[size] = c;
+        size++;
+        str[size] = '\0';
     }
 
     char operator[](unsigned int pos) const
@@ -164,7 +163,7 @@ struct string
     void append(const string other)
     {
         size_t new_size = size + other.size;
-        if (capacity < new_size)
+        if (capacity < new_size + 1)
         {
             resize(calc_capacity(new_size));
         }
@@ -174,9 +173,10 @@ struct string
             str[size + i] = other.str[i];
         }
         size = new_size;
+        str[size] = '\0';
     } // дописать в конец данной строки другую
 
-    void resize(unsigned int new_capacity)
+    void resize(size_t new_capacity)
     {
         if (new_capacity > capacity)
         {
@@ -186,48 +186,77 @@ struct string
                 new_str[i] = str[i];
             }
 
-            delete[] str;
+            if (str)
+                delete[] str;
             str = new_str;
             capacity = new_capacity;
         }
         else if (new_capacity < size)
         {
-            capacity = new_capacity;
+            capacity = new_capacity + 1; // saving space for '\0'
             size = new_capacity;
             char *new_str = new char[new_capacity];
             for (int i = 0; i < new_capacity; i++)
             {
                 new_str[i] = str[i];
             }
-            delete[] str;
+            if (str)
+                delete[] str;
             str = new_str;
+            str[size] = '\0';
         }
     } // увеличить/уменьшить емкость строки
 
-    void reserve(unsigned int capacity)
+    void reserve(size_t capacity)
     {
         //TODO: Здесь и в других местах проверять на возможность переполнения
-        size_t additional_capacity = capacity - (this->capacity - this->size);
-        if (additional_capacity > 0)
+        // size_t additional_capacity = capacity - (this->capacity - this->size);
+        if (capacity + this->size + 1 > this->capacity)
         {
-            resize(this->capacity + additional_capacity);
+            resize(calc_capacity(capacity + this->size));
         }
     } // зарезервировать память в нужном объеме
 
-    void insert(unsigned int pos, string other); // Вставка другой строки внутрь данной
+    void insert(size_t pos, string &other)
+    {
+        capacity = calc_capacity(size + other.size);
+        char *new_str = new char[capacity];
+        for (size_t i = 0; i < size + other.size; i++)
+        {
+            if (i < pos)
+            {
+                new_str[i] = str[i];
+            }
+            else if (i >= pos && i < pos + other.size)
+            {
+                new_str[i] = other.str[i - pos];
+            }
+            else
+            {
+                new_str[i] = str[i - pos - other.size];
+            }
+        }
+        size += other.size;
+        if (str)
+            delete[] str;
+        str = new_str;
+        str[size] = '\0';
+    } // Вставка другой строки внутрь данной
 
     void shrink_to_fit()
     {
         if (capacity > size)
         {
-            char *new_str = new char[size];
+            char *new_str = new char[size + 1];
             for (int i = 0; i < size; i++)
             {
                 new_str[i] = str[i];
             }
-            delete[] str;
+            if (str)
+                delete[] str;
             str = new_str;
-            capacity = size;
+            str[size] = '\0';
+            capacity = size + 1;
         }
     } //очистить неиспользуемую память
 
@@ -242,76 +271,18 @@ struct string
 
     friend std::ostream &operator<<(std::ostream &ostr, const string &str)
     {
-        char *arr = str.str;
-        if (str.size == str.capacity)
-        {
-            arr = new char[str.capacity + 1];
-            for (int i = 0; i < str.capacity + 1; i++)
-            {
-                arr[i] = str.str[i];
-            }
-        }
-        arr[str.size] = '\0';
-        ostr << arr;
+        ostr << str.str;
 
         return ostr;
     }
     friend std::istream &operator>>(std::istream &istr, string &str)
     {
-        // char *cstr;
-        // istr >> cstr;
-        // size_t c_size = 0;
-        // while (cstr[c_size] != '\0')
-        // {
-        //     c_size++;
-        // }
-        // str.size = c_size;
-        // str.capacity = str.calc_capacity(c_size);
-
-        // str.str = new char[str.capacity];
-        // for (int i = 0; i < c_size; i++)
-        // {
-        //     str.str[i] = cstr[i];
-        // }
-        // string new_str(cstr);
-
-        char *cstr;
-        istr >> cstr;
-        cout << "Got cstr: " << cstr << endl;
-        size_t size_ = 0;
-        while (cstr[size_] != '\0')
-        {
-            size_++;
-        }
-
-        cout << "Got char * string" << endl;
-        str.clear();
-        cout << "Cleared string" << endl;
-
-        size_t capacity_ = str.calc_capacity(size_);
-        char *new_str = new char[capacity_];
-        cout << "Created new array" << endl;
-        for (size_t i = 0; i < size_; i++)
-        {
-            new_str[i] = cstr[i];
-        }
-
-        cout << "Filled new array" << endl;
-        delete[] cstr;
-        cout << "Deleted old array" << endl;
-
-        str.str = new_str;
-        str.size = size_;
-        str.capacity = capacity_;
-        cout << "Set string params. Read string" << endl;
-
-        return istr;
-
         char tmp;
-        while (!istr.eof() && (tmp = istr.get()) && (tmp != ' ') && (tmp))
+        while (!istr.eof() && (tmp = istr.get()) && (tmp != ' ') && (tmp != '\n'))
         {
             str += tmp; // Нужно написать += для char
         }
+        return istr;
     }
 };
 
@@ -323,7 +294,23 @@ string operator+(const string &str1, const string &str2)
     return tmp;
 }
 
-int stoi(const string str, size_t pos = 0, int base = 10);
+int min(int a, int b)
+{
+    return a > b ? b : a;
+}
+int stoi(const string str, size_t pos = 0, int base = 10)
+{
+    int result = 0;
+    char tmp;
+    for (size_t i = 0; i < str.size - pos; i++)
+    {
+        //TODO: Не забыть проверить знак
+        tmp = str[pos + i];
+        int n1 = tmp - '0';
+        int n2 = tmp - 'a';
+        int n3 = tmp - 'A';
+    }
+}
 // Преобразование числа, записанного символами в строке, в int
 // base - основание системы счисления
 // Числа могут быть отрицательными
@@ -378,6 +365,8 @@ int main()
     cout << "Enter string: ";
     cin >> s5;
     cout << "Inputed string s5: " << s5 << endl;
-
+    s5.insert(2, s10);
+    s5.insert(5, s10);
+    cout << "S5: " << s5 << endl;
     return 0;
 }
