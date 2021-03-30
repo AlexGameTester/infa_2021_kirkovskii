@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -301,15 +302,39 @@ int min(int a, int b)
 int stoi(const string str, size_t pos = 0, int base = 10)
 {
     int result = 0;
+    int sign = 1;
+    if (str[pos] == '-')
+    {
+        sign = -1;
+        pos++; // Prevent checking str[pos] again in loop
+    }
+
     char tmp;
-    for (size_t i = 0; i < str.size - pos; i++)
+    for (size_t i = str.size - 1; i >= pos; i--)
     {
         //TODO: Не забыть проверить знак
         tmp = str[pos + i];
         int n1 = tmp - '0';
         int n2 = tmp - 'a';
         int n3 = tmp - 'A';
+        if ((n1 >= 0) and (n1 < min(10, base)))
+        {
+            result += n1 * (int)std::pow(base, str.size - 1 - i);
+        }
+        else if ((n2 >= 0) and (n2 < min(26, base - 10)))
+        {
+            result += (n2 - 10) * (int)std::pow(base, str.size - 1 - i);
+        }
+        else if ((n3 >= 0) and (n3 < min(26, base - 10)) {
+            result += (n3 - 10) * (int)std::pow(base, str.size - 1 - i);
+        }
+        else {
+            return INT_MIN;
+        }
     }
+    result *= sign;
+
+    return result;
 }
 // Преобразование числа, записанного символами в строке, в int
 // base - основание системы счисления
@@ -368,5 +393,8 @@ int main()
     s5.insert(2, s10);
     s5.insert(5, s10);
     cout << "S5: " << s5 << endl;
+    string s11("1283");
+    cout << stoi(s11) << endl;
+    cout << stoi(s11, 0, 8) << endl;
     return 0;
 }

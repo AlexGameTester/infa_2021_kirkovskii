@@ -17,7 +17,7 @@ struct Measurment
     double min_time;
 };
 
-Measurment do_measurement(int, int, int);
+Measurment do_measurement(int mode, int length, int repetitions);
 
 int main()
 {
