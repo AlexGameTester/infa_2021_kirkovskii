@@ -102,7 +102,9 @@ def main():
         if mkey == 'exit':
             break
         nkey = input(
-            'Введите сортировки для вывода([b]ubble sort, s[h]aker sort, [s]election sort, [i]nsertion sort, [q]uick sort): ')
+            'Введите сортировки для вывода([b]ubble sort, s[h]aker sort, [s]election sort, [i]nsertion sort, [q]uick sort, [a]ll): ')
+        if 'a' in nkey:
+            nkey = ''.join(NKEYS)
         sm = read('./Lab8/results.txt')
         plot(sm, nkey, mkey)
 
