@@ -33,17 +33,40 @@ bool is_sorted(int *arr, int length)
 
 void quick_sort_rec(int *begin, int *end, unsigned int *swaps, unsigned int *comparisons)
 {
-    // int dist = std::distance(begin, end);
-    int dist = end - begin;
+    int dist = std::distance(begin, end);
+    // int dist = end - begin;
     cout << "Dist: " << dist << endl;
     if (dist == 0)
     {
         return;
     }
-
-    int *center_pointer = (begin + dist / 2);
-    int center_val = *center_pointer;
-    int *current_before =
+    int center = *(begin + dist / 2);
+    int *i = begin;
+    int *j = end;
+    while (i != j)
+    {
+        (*comparisons)++;
+        (*swaps)++;
+        if (*i >= center)
+        {
+            int val = *j;
+            *j = *i;
+            *i = val;
+            j--;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    if (i - 1 > begin)
+    {
+        quick_sort_rec(begin, i - 1, swaps, comparisons);
+    }
+    if (j + 1 < end)
+    {
+        quick_sort_rec(j + 1, end, swaps, comparisons);
+    }
 }
 
 int *quick_sort(int *arr, int length, SortStats *stats)
@@ -67,8 +90,6 @@ int *quick_sort(int *arr, int length, SortStats *stats)
     stats->swaps = *swaps;
     delete swaps;
     delete comparisons;
-    int f;
-    std::cin >> f;
     return arr;
 }
 
@@ -394,6 +415,8 @@ Measurement do_measurement(unsigned int length, unsigned int number_of_repetitio
         {
             min_swaps = stats->swaps;
         }
+
+        // delete stats;
     }
 
     Measurement measurement;

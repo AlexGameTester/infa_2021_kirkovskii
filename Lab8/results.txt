@@ -1,0 +1,9 @@
+bubble sort; number=0; length=10; min_time=0; mean_time=300300; time_error=458715.96004; min_comparisons=45; mean_comparisons=45; comparisons_error=0; min_swaps=26; mean_swaps=26; swaps_error=0; 
+shaker sort; number=1; length=10; min_time=0; mean_time=900840; time_error=300280.93912; min_comparisons=72; mean_comparisons=72; comparisons_error=0; min_swaps=26; mean_swaps=26; swaps_error=0; 
+selection sort; number=2; length=10; min_time=0; mean_time=400450; time_error=490449.12733; min_comparisons=45; mean_comparisons=45; comparisons_error=0; min_swaps=10; mean_swaps=10; swaps_error=0; 
+insertion sort; number=3; length=10; min_time=0; mean_time=200160; time_error=400320.02248; min_comparisons=45; mean_comparisons=45; comparisons_error=0; min_swaps=35; mean_swaps=35; swaps_error=0; 
+quick_sort; number=4; length=10; min_time=1e+30; mean_time=0; time_error=0; min_comparisons=500000000; mean_comparisons=0; comparisons_error=0; min_swaps=500000000; mean_swaps=0; swaps_error=0; 
+bubble sort; number=0; length=50; min_time=0; mean_time=500510; time_error=500510.1027; min_comparisons=2156; mean_comparisons=2156; comparisons_error=0; min_swaps=650; mean_swaps=650; swaps_error=0; 
+shaker sort; number=1; length=50; min_time=0; mean_time=800630; time_error=400315.41077; min_comparisons=1470; mean_comparisons=1470; comparisons_error=0; min_swaps=650; mean_swaps=650; swaps_error=0; 
+selection sort; number=2; length=50; min_time=0; mean_time=500340; time_error=500340.26462; min_comparisons=1225; mean_comparisons=1225; comparisons_error=0; min_swaps=50; mean_swaps=50; swaps_error=0; 
+insertion sort; number=3; length=50; min_time=0; mean_time=200610; time_error=401221.49606; min_comparisons=1225; mean_comparisons=1225; comparisons_error=0; min_swaps=1365; mean_swaps=1365; swaps_error=0; 
