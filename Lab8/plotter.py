@@ -8,8 +8,8 @@ FMTS = ['bx-', 'co-', 'r^-', 'gv-', ',-']
 
 
 class Measurement:
-    def __init__(self, str):
-        els = str.split('; ')
+    def __init__(self, line):
+        els = line.split('; ')
         self.number = int(els[1].split('=')[1])
         self.length = int(els[2].split('=')[1])
         self.min_time = float(els[3].split('=')[1])
