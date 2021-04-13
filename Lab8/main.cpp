@@ -91,8 +91,6 @@ int *quick_sort(int *arr, int length, SortStats *stats)
     stats->swaps = *swaps;
     delete swaps;
     delete comparisons;
-    // int f;
-    // std::cin >> f;
     return arr;
 }
 
