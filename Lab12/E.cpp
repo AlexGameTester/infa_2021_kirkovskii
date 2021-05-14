@@ -21,10 +21,12 @@ int main()
             if (numbers[j] == i - j)
             {
                 tmp += ways[j];
+                tmp %= 937;
             }
         }
 
         ways[i] = tmp + ways[i - 1];
+        ways[i] %= 937;
     }
 
     cout << ways[n - 1] % 937 << endl;
